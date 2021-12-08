@@ -381,9 +381,12 @@ const renderDropTimer = () => {
     // Only show this if machineStats is available
     machineStats && (
       <div className="machine-container">
-              {/* Add this at the beginning of our component */}
-      {renderDropTimer()}
-        <p>{`Items Minted: ${machineStats.itemsRedeemed} / ${machineStats.itemsAvailable}`}</p>
+          {renderDropTimer()}
+      <p>{`Items Minted: ${machineStats.itemsRedeemed} / ${machineStats.itemsAvailable}`}</p>
+        {/* Check to see if these properties are equal! */}
+        {machineStats.itemsRedeemed === machineStats.itemsAvailable ? (
+          <p className="sub-text">Sold Out 🙊</p>
+        ) : (
         <button
   className="cta-button mint-button"
   onClick={mintToken}
@@ -392,10 +395,10 @@ const renderDropTimer = () => {
 >
             Mint NFT
         </button>
-              {/* If we have mints available in our array, let's render some items */}
+              )}
+              {mints.length > 0 && renderMintedItems()}
               {isLoadingMints && <p>LOADING MINTS...</p>}
-      {mints.length > 0 && renderMintedItems()}
-      </div>
+            </div>
     )
   );
 
