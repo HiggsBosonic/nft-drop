@@ -68,7 +68,8 @@ const App = () => {
       <div className="container">
         <div className="header-container">
           <p className="header">🍭 Candy Drop</p>
-          <p className="sub-text">NFT drop machine with fair mint</p>
+          <p className="sub-text">I will edit this soon Farza, don't be sad. CSS incoming<br /><br />
+          NFT drop machine with fair mint</p>
           {/* Render your connect to wallet button right here */}
           {!walletAddress && renderNotConnectedContainer()}
         </div>
