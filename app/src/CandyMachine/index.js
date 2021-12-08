@@ -27,6 +27,7 @@ const MAX_CREATOR_LEN = 32 + 1 + 1;
 const CandyMachine = ({ walletAddress }) => {
 
   const [machineStats, setMachineStats] = useState(null);
+  const [mints, setMints] = useState([]);
 
   useEffect(() => {
     getCandyMachineState();
@@ -88,6 +89,24 @@ const getCandyMachineState = async () => {
     goLiveData,
     goLiveDateTimeString,
   });
+  const data = await fetchHashTable(
+    process.env.REACT_APP_CANDY_MACHINE_ID,
+    true
+  );
+  
+  if (data.length !== 0) {
+    for (const mint of data) {
+      // Get URI
+      const response = await fetch(mint.data.uri);
+      const parse = await response.json();
+      console.log("Past Minted NFT", mint)
+  
+      // Get image URI
+      if (!mints.find((mint) => mint === parse.image)) {
+        setMints((prevState) => [...prevState, parse.image]);
+      }
+    }
+  }
 };
 
   // Actions
@@ -315,6 +334,19 @@ const getCandyMachineState = async () => {
     });
   };
 
+  const renderMintedItems = () => (
+    <div className="gif-container">
+      <p className="sub-text">Minted Items ✨</p>
+      <div className="gif-grid">
+        {mints.map((mint) => (
+          <div className="gif-item" key={mint}>
+            <img src={mint} alt={`Minted NFT ${mint}`} />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+
   return (
     // Only show this if machineStats is available
     machineStats && (
@@ -324,6 +356,8 @@ const getCandyMachineState = async () => {
         <button className="cta-button mint-button" onClick={mintToken}>
             Mint NFT
         </button>
+              {/* If we have mints available in our array, let's render some items */}
+      {mints.length > 0 && renderMintedItems()}
       </div>
     )
   );
