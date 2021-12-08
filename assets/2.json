@@ -1,17 +1,17 @@
 {
     "name": "Orion Nebula",
     "symbol": "",
-    "image": "orionNebula.png",
+    "image": "2.png",
     "properties": {
       "files": [
         {
-          "uri": "orionNebula.png",
+          "uri": "2.png",
           "type": "image/png"
         }
       ],
       "creators": [
         {
-          "address": "INSERT_CREATOR_WALLET_ADDRESS_HERE",
+          "address": "EYJMi7BAFCjXhBN56JLjZ8VnvxUxVFWhrirxLv3D9XL6",
           "share": 100
         }
       ]

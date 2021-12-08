@@ -1,17 +1,17 @@
 {
     "name": "Carina Nebula",
     "symbol": "",
-    "image": "carinaNebula.png",
+    "image": "0.png",
     "properties": {
       "files": [
         {
-          "uri": "carinaNebula.png",
+          "uri": "0.png",
           "type": "image/png"
         }
       ],
       "creators": [
         {
-          "address": "INSERT_CREATOR_WALLET_ADDRESS_HERE",
+          "address": "EYJMi7BAFCjXhBN56JLjZ8VnvxUxVFWhrirxLv3D9XL6",
           "share": 100
         }
       ]

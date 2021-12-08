@@ -1,17 +1,17 @@
 {
     "name": "Milky Way Galaxy",
     "symbol": "",
-    "image": "milkyWay.png",
+    "image": "1.png",
     "properties": {
       "files": [
         {
-          "uri": "milkyWay.png",
+          "uri": "1.png",
           "type": "image/png"
         }
       ],
       "creators": [
         {
-          "address": "INSERT_CREATOR_WALLET_ADDRESS_HERE",
+          "address": "EYJMi7BAFCjXhBN56JLjZ8VnvxUxVFWhrirxLv3D9XL6",
           "share": 100
         }
       ]
